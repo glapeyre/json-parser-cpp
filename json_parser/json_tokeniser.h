@@ -25,7 +25,7 @@ namespace json
 	class json_tokenizer
 	{
 	public:
-		json_tokenizer(std::string text)
+		json_tokenizer(std::string_view text)
 			: _text(text),
 			_pos(0),
 			_end(text.length())
@@ -43,7 +43,7 @@ namespace json
 		double get_number();
 
 	private:
-		std::string _text;
+		std::string_view _text;
 		int _pos;
 		int _end;
 	};

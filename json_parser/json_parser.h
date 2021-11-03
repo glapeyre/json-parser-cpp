@@ -4,5 +4,5 @@
 #include "json_value.h"
 
 
-json::json_object parse_json(std::string json_text);
+json::json_object parse_json(std::string_view json_text);
 

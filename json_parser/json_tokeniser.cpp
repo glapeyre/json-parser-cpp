@@ -94,7 +94,7 @@ std::string json_tokenizer::get_string()
 	auto end = _pos;
 
 	_pos++;
-	return _text.substr(start, end - start);
+	return std::string{ _text.substr(start, end - start) };
 }
 
 double json_tokenizer::get_number()

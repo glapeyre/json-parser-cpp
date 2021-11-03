@@ -11,7 +11,7 @@ json_value parse_array(json_tokenizer& tokeniser);
 json_value parse_value(token_type type, std::optional<json_value> token, json_tokenizer& tokeniser);
 json_object parse_object(json_tokenizer& tokeniser);
 
-json_object parse_json(string json_text)
+json_object parse_json(string_view json_text)
 {
 	json_tokenizer tok(json_text);
 

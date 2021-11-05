@@ -5,7 +5,7 @@
 
 #include "json_value.h"
 
-namespace json
+namespace twobits::json
 {
 	enum class token_type
 	{
@@ -44,7 +44,7 @@ namespace json
 
 	private:
 		std::string_view _text;
-		int _pos;
-		int _end;
+		size_t _pos;
+		size_t _end;
 	};
 };

@@ -5,7 +5,7 @@
 #include "json_tokeniser.h"
 
 using namespace std;
-using namespace json;
+using namespace twobits::json;
 
 std::tuple<token_type, std::optional<json_value>> json_tokenizer::next_token()
 {

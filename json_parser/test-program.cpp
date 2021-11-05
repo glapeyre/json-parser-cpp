@@ -7,6 +7,8 @@
 #include "json_value.h"
 #include "json_parser.h"
 
+using namespace twobits::json;
+
 int main()
 {
     std::string test = "{ 'number':3.14159, 'string': 'hello world', 'boolean': false, 'array':[ 123, 456, 789, { 'embedded object': 'boo!' } ] }";
@@ -23,15 +25,15 @@ int main()
     {
         switch (item.type())
         {
-            case json::json_value_type::String:
+            case json_value_type::String:
                 std::cout << (std::string)item;
                 break;
 
-            case json::json_value_type::Number:
+            case json_value_type::Number:
                 std::cout << (double)item << ", ";
                 break;
 
-            case json::json_value_type::Object:
+            case json_value_type::Object:
             {
                 auto ob = item.object_value();
                 for (auto& [k,v] : ob)

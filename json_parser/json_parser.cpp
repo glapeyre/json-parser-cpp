@@ -5,13 +5,13 @@
 #include "json_tokeniser.h"
 
 using namespace std;
-using namespace json;
+using namespace twobits::json;
 
 json_value parse_array(json_tokenizer& tokeniser);
 json_value parse_value(token_type type, std::optional<json_value> token, json_tokenizer& tokeniser);
 json_object parse_object(json_tokenizer& tokeniser);
 
-json_object parse_json(string_view json_text)
+json_object twobits::json::parse_json(std::string_view json_text)
 {
 	json_tokenizer tok(json_text);
 
@@ -95,10 +95,11 @@ json_value parse_value(token_type type, std::optional<json_value> token, json_to
 		case token_type::Number:
 			return token.value();
 
-		case token_type::Null:
-			return json_value(json_value_type::Null);
-
 		case token_type::String:
 			return token.value();
+
+		default:
+		case token_type::Null:
+			return json_value(json_value_type::Null);
 	}
 }
